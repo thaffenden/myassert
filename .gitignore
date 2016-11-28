@@ -1,0 +1,21 @@
+# Virtualenv files
+bin/
+lib/
+scripts/
+include/
+pip-selfcheck.json
+selenium/
+
+# Python Files
+*.Python
+__pycache__/
+*.pyd
+*.pyc
+
+# IDE Files
+.idea/
+.cache/
+
+# Packaging Files
+dist/
+*.egg-info
