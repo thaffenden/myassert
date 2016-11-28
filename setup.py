@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst')) as f:
 packages = ['myassert']
 
 setup(
-    name='my assert',
+    name='my-assert',
     version='0.0.1',
     description='Simple assertion library with verbose error messages',
     long_description=long_description,
