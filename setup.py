@@ -7,7 +7,7 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'README.rst')) as f:
     long_description = f.read()
 
-packages = ["myassert"]
+packages = ['myassert']
 
 setup(
     name='my assert',
@@ -16,5 +16,6 @@ setup(
     long_description=long_description,
     url='https://github.com/thaffenden/myassert',
     author='Tristan Haffenden',
+    author_email="tristanehaffenden@gmail.com",
     packages=packages,
 )

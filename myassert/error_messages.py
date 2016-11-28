@@ -83,35 +83,12 @@ def _values_are_equal_comparison_error(value, expected):
         return '{} is equal to {}'.format(value, expected)
 
 
-def member_in_container_check(member, container, error_type):
-    """
-    Message generator if a member does not exist in a container.
-    The argument error type will always be 'does not exist', or 'exists'.
-    :param member:
-    :param container:
-    :param error_type:
-    :return:
-    """
-    error_details = _format_comparison_values(member, container)
-    if isinstance(container, dict):
-        member_item = 'Key'
-    elif isinstance(container, list):
-        member_item = 'List item'
-    else:
-        member_item = 'String'
-
-    return str("{} '{}' {} in the {}:\n{}".format(
-        member_item, member, error_type, type(container).__name__,
-        error_details['expected_string'])
-    )
-
-
 # Type check errors
 # Functions to format the specific type check errors, so appropriate messages
 # can be generated based on the actual values passed.
 
 
-def type_checker(value, expected):
+def _type_checker(value, expected):
     """
     Check the data types are the same and append to error message warning if
     they are not.
@@ -168,7 +145,7 @@ def _generate_error_with_diff(value, expected):
     :param expected:
     :return:
     """
-    different_types = type_checker(value, expected)
+    different_types = _type_checker(value, expected)
 
     if different_types:
         return different_types
@@ -201,3 +178,26 @@ def equal_errors(value, expected):
         full_error = _values_are_not_equal_comparison_error(value, expected)
         full_error += _generate_error_with_diff(value, expected)
         return full_error
+
+
+def member_in_container_check(member, container, error_type):
+    """
+    Message generator if a member does not exist in a container.
+    The argument error type will always be 'does not exist', or 'exists'.
+    :param member:
+    :param container:
+    :param error_type:
+    :return:
+    """
+    error_details = _format_comparison_values(member, container)
+    if isinstance(container, dict):
+        member_item = 'Key'
+    elif isinstance(container, list):
+        member_item = 'List item'
+    else:
+        member_item = 'String'
+
+    return str("{} '{}' {} in the {}:\n{}".format(
+        member_item, member, error_type, type(container).__name__,
+        error_details['expected_string'])
+    )
