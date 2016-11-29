@@ -11,7 +11,7 @@ packages = ['myassert']
 
 setup(
     name='my-assert',
-    version='0.0.1',
+    version='0.0.2',
     description='Simple assertion library with verbose error messages',
     long_description=long_description,
     url='https://github.com/thaffenden/myassert',

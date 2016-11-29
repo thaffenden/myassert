@@ -150,17 +150,20 @@ def _generate_error_with_diff(value, expected):
     if different_types:
         return different_types
     else:
-        count_string = str('\nvalue contains {} items\nexpected contains {} '
-                           'items'.format(len(value), len(expected)))
-
         if isinstance(value, str):
             return _string_comparison(value, expected)
 
-        elif isinstance(value, dict):
+        if isinstance(value, int):
+            return ""
+
+        count_string = str('\nvalue contains {} items\nexpected contains {} '
+                           'items'.format(len(value), len(expected)))
+
+        if isinstance(value, dict):
             type_diff = '\nDIFF:\n{}'.format(_dict_comparison(value, expected))
             return '{}\n{}'.format(count_string, type_diff)
 
-        elif isinstance(value, list):
+        if isinstance(value, list):
             type_diff = '\nDIFF:\n{}'.format(_list_comparison(value, expected))
             return '{}\n{}'.format(count_string, type_diff)
 
