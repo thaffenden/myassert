@@ -1,3 +1,4 @@
+from sys import argv
 from setuptools import setup
 from os import path
 
@@ -9,13 +10,19 @@ with open(path.join(here, 'README.rst')) as f:
 
 packages = ['myassert']
 
+# Only include pytest runner in setup requires if needed
+needs_pytest = {'pytest', 'test'}.intersection(argv)
+pytest_runner = ['pytest-runner'] if needs_pytest else []
+
 setup(
     name='my-assert',
-    version='0.0.2',
+    version='0.0.1',
     description='Simple assertion library with verbose error messages',
     long_description=long_description,
     url='https://github.com/thaffenden/myassert',
     author='Tristan Haffenden',
     author_email="tristanehaffenden@gmail.com",
     packages=packages,
+    setup_requires=[pytest_runner],
+    tests_require=['pytest']
 )
