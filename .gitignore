@@ -4,7 +4,6 @@ lib/
 scripts/
 include/
 pip-selfcheck.json
-selenium/
 
 # Python Files
 *.Python
@@ -19,3 +18,4 @@ __pycache__/
 # Packaging Files
 dist/
 *.egg-info
+build/
