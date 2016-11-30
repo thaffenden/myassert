@@ -3,6 +3,10 @@ my assert
 
 *Simple python assertion library with verbose output.*
 
+.. image:: https://travis-ci.org/thaffenden/myassert.svg?branch=master
+   :alt: Travis CI Build Status
+   :target: https://travis-ci.org/thaffenden/myassert
+
 **my assert** is a simple assertion library designed to give your assertion statements a more user friendly output.
 
 It currently accommodates two main implementations:
