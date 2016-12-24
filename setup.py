@@ -16,7 +16,7 @@ pytest_runner = ['pytest-runner'] if needs_pytest else []
 
 setup(
     name='my-assert',
-    version='0.0.1',
+    version='0.0.3',
     description='Simple assertion library with verbose error messages',
     long_description=long_description,
     url='https://github.com/thaffenden/myassert',
@@ -24,5 +24,10 @@ setup(
     author_email="tristanehaffenden@gmail.com",
     packages=packages,
     setup_requires=[pytest_runner],
-    tests_require=['pytest']
+    tests_require=['pytest'],
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Programming Language :: Python :: 2.7',
+    ]
 )

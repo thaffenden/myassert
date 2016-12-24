@@ -9,7 +9,7 @@ my assert
     * - tests
       - |travis| |coverage| |health|
     * - package
-      - |version|
+      - |version| |supports|
 
 .. |travis| image:: https://travis-ci.org/thaffenden/myassert.svg?branch=master
    :alt: Travis CI Build Status
@@ -26,6 +26,12 @@ my assert
 .. |version| image:: https://badge.fury.io/py/my-assert.svg
    :alt: Pypi Version
    :target: https://pypi.python.org/pypi/my-assert
+
+.. |supports| image:: https://img.shields.io/pypi/pyversions/myassert.svg?style=flat
+   :alt: Supported Python Versions
+   :target: https://pypi.python.org/pypi/my-assert
+
+
 
 
 **my assert** is a simple assertion library designed to give your assertion statements a more user friendly output.
