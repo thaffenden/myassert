@@ -1,8 +1,6 @@
 language: python
 python:
   - "2.7"
-  - "3.3"
-  - "3.4"
 # command to install dependencies
 before_install:
   - python --version
@@ -12,4 +10,4 @@ install:
   - pip install pytest --upgrade
   - pip install pytest-cov
 script:
-  - py.test --cov=myassert
+  - py.test --cov-report term-missing --cov=myassert
