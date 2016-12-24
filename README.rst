@@ -7,7 +7,7 @@ my assert
     :stub-columns: 1
 
     * - tests
-      - |travis| |coverage|
+      - |travis| |coverage| |health|
     * - package
       - |version|
 
@@ -18,6 +18,10 @@ my assert
 .. |coverage| image:: https://coveralls.io/repos/github/thaffenden/myassert/badge.svg?branch=master
    :alt: Code Coverage
    :target: https://coveralls.io/github/thaffenden/myassert?branch=master
+
+.. |health| image:: https://landscape.io/github/thaffenden/myassert/master/landscape.svg?style=flat
+   :alt: Code Health
+   :target: https://landscape.io/github/thaffenden/myassert/master
 
 .. |version| image:: https://badge.fury.io/py/my-assert.svg
    :alt: Pypi Version
