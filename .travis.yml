@@ -9,5 +9,8 @@ before_install:
 install:
   - pip install pytest --upgrade
   - pip install pytest-cov
+  - pip install coveralls
 script:
   - py.test --cov-report term-missing --cov=myassert
+after_success:
+  - coveralls
