@@ -133,7 +133,7 @@ def _dict_comparison(value, expected):
     :return:
     """
     sorted_value = OrderedDict(sorted(value.items()))
-    sorted_expected = OrderedDict(sorted(expected.iteritems()))
+    sorted_expected = OrderedDict(sorted(expected.items()))
     return '\n'.join(ndiff(sorted_value.items(), sorted_expected.items()))
 
 
