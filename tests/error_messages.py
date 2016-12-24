@@ -3,16 +3,20 @@ Tests to cover the message format generator functions in the error messages
 file.
 """
 import pytest
+from inspect import currentframe
 
 from tests import random_string, random_list, random_dict
 from myassert.error_messages import (error_message, _format_comparison_values)
+from myassert.assertions import assert_equal
 
 
 def test_base_error_message_format():
     msg_string = random_string()
-    generated_error = error_message(msg=msg_string)
-    assert generated_error == '\n{a}\n{b}\n{a}'.format(a='=' * 79,
-                                                       b=msg_string)
+    this_func = currentframe().f_code.co_name
+    generated_error = error_message(msg=msg_string, error_type=this_func)
+    assert generated_error == str('\nTEST BASE ERROR MESSAGE FORMAT FAILED:'
+                                  '\n{a}\n{b}'
+                                  '\n{a}\n'.format(a='=' * 79, b=msg_string))
 
 
 @pytest.mark.parametrize(

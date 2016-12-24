@@ -8,14 +8,25 @@ from textwrap import wrap
 from collections import OrderedDict
 
 
-def error_message(msg):
+def error_message(msg, error_type):
     """
     Creates the basic error message format inside a block to make it as clear
     as possible on the output.
     :param msg:
+    :param error_type:
     :return:
     """
-    return '\n{a}\n{b}\n{a}'.format(a='=' * 79, b=msg)
+    return '\n{err_type}\n{a}\n{b}\n{a}\n'.format(
+        a='=' * 79, b=msg, err_type=_format_error_type(error_type))
+
+
+def _format_error_type(error_type):
+    """
+    Format the text to print at the top of the assertion block.
+    :param error_type: The assertion function name.
+    :return:
+    """
+    return '{} failed:'.format(error_type.replace("_", " ")).upper()
 
 
 def _format_comparison_values(value, expected):
